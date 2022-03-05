@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd server && npm ci && node src/app.js",
-    "heroku-prebuild": "cd client && npm ci && npm run build && mv build ../server",
+    "start": "cd server && node src/app.js",
+    "heroku-prebuild": "cd client && npm ci && npm run build && mv build ../server && cd ../server && npm ci",
     "dev-server-start": "nodemon server/src/app.js",
     "dev-client-start": "cd client && npm run start",
     "dev-prebuild": "cd server && rmdir build && cd ../client && npm run build && mv build ../server"
